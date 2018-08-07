@@ -1,0 +1,138 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{jp} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+
+
+\usepackage[scale=0.8]{geometry}
+%\usepackage[margin=.8in]{geometry}
+% Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\name{\fname{}}{\lname}
+
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Curriculum Vitae}
+% \address{123 Broadway}{City, State 12345}
+\phone[mobile]{(\mophone}
+% \phone{(000) 111 1112}
+% \fax{(000) 111 1113}
+\email{\myemail}
+%\homepage{https://github.com/joelliusp}{https://github.com/joelliusp} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+% \extrainfo{additional information}
+% \photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+% \quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+\parbox[t]{\hintscolumnwidth}{
+\strut\raisebox{\baseletterheight}{\color{color1}\rule{\textwidth}{0.95ex}}}
+
+\makecvtitle
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\section{Work Experience}
+
+\cventry{2012-Present}{Software Developer}{Rural Sourcing Inc. (RSI)}{}{}{
+At RSI, I worked as a consultant software developer
+which required the  flexibility to learn diverse technologies according to client needs. Some of these clients have included,
+
+\workProj{An aircraft manufacturer}{
+This client was having to manage their process by hand using excel sheets. We provided them with a new solution written as an ASP.Net MVC application, which used Entity Framework as the database layer. 
+}
+\workProj{A local charity organization}{I rebuilt part of the back end of the United Way`s local chapter`s PHP based website. It needed repairing due to obsolete code.}
+\workProj{A classic car insurance company}{I contributed to their public web application using a combination of C\#, SQL, and AngularJS and was a part of the transition to a new platform that they released for their insurance quote website.\newline
+In addition, I was one of the maintainers for two of the insurance company`s internal WPF applications, one of  which they used to run data conversion processes and the other was used for toggling features for their customer facing website.}
+\workProj{An international Fortune 500 paint supplier}{Similar work as for the insurance company (See next above). After our original developer left, I was passed this C\# MVC web application to finish along with its JavaScript, so that it could be delivered to the client. }
+\workProj{A regional pork and poultry distributor }{Using VB.Net and Telerik WinForms, I helped upgrade a VB6 application to VB.Net. My team wrote specific applications to automate much of the update by using specialized find and replace with regular expressions.}
+}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\cventry{2011}{Bachelor of Science}{University of South Carolina}{Aiken}{GPA 3.8 / 4.0}{Mathematics/Computer Science}
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Skills and Technologies}
+\skillsection{C\# & JavaScript & Objective-C \\
+SQL & Entity Framework &  Regular Expressions (RegExp)\\
+HTML/CSS  & ASP.Net (MVC) & Bash/Shell Scripting \\
+}
+% \skillrow{C\#}{JavaScript}{Objective-C}
+% \skillrow{SQL}{Entity Framework}{HTML/CSS}
+% \skillrow{Java}{Regular Expressions (RegExp)}{ASP.Net (MVC)}
+
+
+\section{Personal Projects (Newest to Oldest)}
+
+\selfproj{Space Habit Frontier (iOS app)}{Objective-C, C}{This is an app inspired by Habitica. It is a productivity/to-do application based on the idea of gamifying good habits.}{}{}
+
+%"I was originally writing this as a web app in Python (see below) but I shifted to writing a standalone"
+
+\selfproj{Lunch Sorter 2000}{JavaScript}{This is a Google script based web application. Using Google Sheets as backend, it accepts a list of people and restaurants, and sorts the people into dinner groups such that, over repeated sorts, if possible, it places each person into a restaurant that they have not eaten at yet and with people with whom they have not yet eaten with.}{}{https://github.com/joelliusp/LunchSorter2000}
+
+%\selfproj{Space Habit Frontier(Web application)}{Python, MongoDB}{This is the web application version of the IOS app above. Besides Python, I used MongoDB for the database; Bootstrap, Knockout.Js on the frontend; and CherryPy for the web framework. I have stopped working on this to focus on the IOS app.}{}{https://github.com/joelliusp/SpaceHabit}
+
+\selfproj{Jester}{C\#}{This is a basic .Net unit testing framework that I wrote to test some of my code. I used it as a project to explore how reflection works in .Net}{}{https://github.com/joelliusp/Jester }
+
+%\selfproj{Stay Active Reminder}{C\#}{This is a simple reminder app to remind me stand up and walk around more regularly. It is a WinForms app written in C\#.}{}{https://github.com/joelliusp/stopsitting } %
+
+\selfproj{Sorting Algorithm Animation Demo}{JavaScript}{This provides demonstrations for important sorting algorithms. Quicksort is the only algorithm available. It was built JavaScript, JQuery, HTML and CSS.}{ https://run.plnkr.co/plunks/pwyM0WwoMGWsZqjJele7/ }{https://github.com/joelliusp/algorithm\_demos} %
+
+\projadd{While working on this project, I experimented with designing a mini-programming language built out of JavaScript. That was handled in this specific file.}{https://github.com/joelliusp/algorithm\_demos/blob/master/algorithm\_builder.js}
+
+\selfproj{Password Generator/Reminder}{C\#}{Wrote this program in C\# as a portable way to create passwords for websites and remember those passwords. The program uses the data input by the user to generate a pseudo-random password that can be regenerated given the same inputs.}{}{http://joelpridg.nfshost.com/programs.html\#password\_reminder }%
+\projadd{Ported the code for the Password Generator to be usable under Ubuntu. I used MonoDevelop and the GTK libraries for the GUI. While I was making it compatible, I updated the back-end code for greater portability.}{http://joelpridg.nfshost.com/programs.html\#password\_reminder\_v2 }%
+
+\selfproj{Number Base Converter}{C\#}{This is a C\# project that I wrote to help me understand the conversion algorithms for converting between different number bases. It is designed to be able to convert between decimal, binary and hexadecimal. The program is able to convert using signed, unsigned, and the IEEE 754 representations for binary and hexadecimal numbers. Right now, it is a project that I use as a learning exercise for software engineering.}{}{https://github.com/joelliusp/num-base-convert }
+%
+%----------------------------------------------------------------------------------------
+
+
+
+
+\end{document}
