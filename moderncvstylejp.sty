@@ -1,0 +1,157 @@
+%% start of file `moderncvstylejp.sty'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{moderncvstylejp}[2012/10/31 v1.2.0 modern curriculum vitae scheme: empty]
+
+\title{}
+%-------------------------------------------------------------------------------
+%                required packages
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%                package options
+%-------------------------------------------------------------------------------
+
+
+%-------------------------------------------------------------------------------
+%                style definition
+%-------------------------------------------------------------------------------
+
+% fonts
+\renewcommand*{\namefont}{\fontsize{34}{36}\mdseries\upshape}
+\renewcommand*{\sectionfont}{\large\mdseries\upshape}
+
+% lengths
+
+\newlength{\hintscolumnwidth}
+\setlength{\hintscolumnwidth}{0.175\textwidth}
+\newlength{\baseletterheight}
+\settoheight{\baseletterheight}{\sectionstyle{o}}
+\newlength{\separatorcolumnwidth}
+\setlength{\separatorcolumnwidth}{0.025\textwidth}
+\newlength{\maincolumnwidth}
+\setlength{\maincolumnwidth}{\textwidth -\separatorcolumnwidth}%
+\newlength{\skillcellwidth}
+\setlength{\skillcellwidth}{.2\textwidth}
+\newlength{\skillcellsepwidth}
+\setlength{\skillcellsepwidth}{.07\textwidth}
+\newlength{\sidewidth}
+\setlength{\sidewidth}{\hintscolumnwidth}
+\addtolength{\sidewidth}{\separatorcolumnwidth}
+\newlength{\projindent}
+\setlength{\projindent}{\separatorcolumnwidth}
+\newlength{\clifindent}
+\setlength{\clifindent}{.2in}
+
+%\newlength{\myNameTitle}
+%\setlength{\myNameTitle}{\textwidth}
+
+% styles
+
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
+\renewcommand*{\namestyle}[1]
+{{\namefont\textcolor{color0}{#1}}}
+\renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{color0}{#1}}}
+
+\newcommand*{\sectionstyleupper}[1]{\uppercase{\sectionstyle{#1}}}
+
+% commands
+
+\newcommand{\cvsize}{.25em} 
+
+\newcommand{\movep}{
+\leftskip \clifindent
+\parindent -\clifindent
+}
+
+\newcommand*{\makeContactInfo}
+{email: \@email\ \par phone: \collectiongetitem{phones}{0}}
+
+\renewcommand*{\makecvtitle}{
+\namestyle{\@firstname\ \@lastname}
+\par
+\makeContactInfo
+}
+
+\renewcommand*{\section}[1]{
+
+\par\addvspace{2.5ex}%
+\parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
+ \hspace{\separatorcolumnwidth}%
+\parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#1}}%
+\par\nobreak\addvspace{1ex}\@afterheading
+
+}
+
+\renewcommand{\cvitem}[3][\cvsize]{
+\begin{tabular}{@{}p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}} %
+\raggedleft\hintstyle{#2} &#3%
+\end{tabular} %
+
+\addvspace{#1}%
+}
+
+\renewcommand{\cventry}[7][\cvsize]{
+	\cvitem[#1]{#2}{\textbf{#3}
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}
+    \ifthenelse{\equal{#5}{}}{}{, #5}
+    \ifthenelse{\equal{#6}{}}{}{, #6}
+    
+    \movep
+    #7} %
+}
+
+\newcommand*{\workProj}[2]{
+\emph{#1}\par %
+\movep
+#2\par
+
+}
+
+\newcommand*{\skillsection}[1]{
+{\def\arraystretch{1.3}\tabcolsep=10pt
+\begin{tabular}{@{\hspace{\sidewidth}}l @{\hspace{\skillcellsepwidth}}l@{\hspace{\skillcellsepwidth}}l} %
+ #1
+\end{tabular}}%
+}
+
+\newcommand*{\selfproj}[6][\cvsize]{
+\cvitem[#1]{}{
+\emph{#2} % 
+\ifthenelse{\equal{#3}{}}
+{}
+{(#3)} % 
+
+\movep
+{#4} %
+\newline
+\ifthenelse{\equal{#5}{}}{}{Demo: \url{#5} \newline} %
+\ifthenelse{\equal{#6}{}}{(Source Code is private)}{Latest Version: \url{#6}} %
+} %
+}
+
+\newcommand{\projadd}[3][\cvsize]{
+\cvitem[#1]{}{
+
+\movep
+#2
+\url{#3}
+}%
+}
+
+% see moderncv.cls for command declarations that needs to be implemented, e.g. \maketitle, \section, \subsections, \cvline, etc
+
+\endinput
+
+
+%% end of file `moderncvstylejp.sty'.
