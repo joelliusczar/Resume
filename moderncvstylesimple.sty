@@ -50,8 +50,6 @@
 \addtolength{\sidewidth}{\separatorcolumnwidth}
 \newlength{\projindent}
 \setlength{\projindent}{\separatorcolumnwidth}
-\newlength{\clifindent}
-\setlength{\clifindent}{.2in}
 
 %\newlength{\myNameTitle}
 %\setlength{\myNameTitle}{\textwidth}
@@ -69,51 +67,44 @@
 
 \newcommand{\cvsize}{.25em} 
 
-\newcommand{\movep}{
-\leftskip \clifindent
-\parindent -\clifindent
-}
-
 \newcommand*{\makeContactInfo}
-{email: \@email\ \par phone: \collectiongetitem{phones}{0}}
+{email: \@email\ \par phone: \@mobile}
 
 \renewcommand*{\makecvtitle}{
-\namestyle{\@firstname\ \@lastname}
+\namestyle{\@firstname\ \@familyname}
 \par
 \makeContactInfo
 }
 
 \renewcommand*{\section}[1]{
-
 \par\addvspace{2.5ex}%
 \parbox[t]{\hintscolumnwidth}{\strut\raggedleft\raisebox{\baseletterheight}{\color{color1}\rule{\hintscolumnwidth}{0.95ex}}}%
  \hspace{\separatorcolumnwidth}%
 \parbox[t]{\maincolumnwidth}{\strut\sectionstyle{#1}}%
-\par\nobreak\addvspace{1ex}\@afterheading
+\par\nobreak\addvspace{1ex}\@afterheading}
 
-}
-
-\renewcommand{\cvitem}[3][\cvsize]{
-\begin{tabular}{@{}p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}} %
-\raggedleft\hintstyle{#2} &#3%
-\end{tabular} %
+\renewcommand*{\cvitem}[3][\cvsize]{
+{#2} {#3} %
+% \begin{tabular}{@{}p{\hintscolumnwidth} @{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}} %
+% \raggedleft\hintstyle{#2} &#3%
+% \end{tabular} %
 
 \addvspace{#1}%
 }
 
-\renewcommand{\cventry}[7][\cvsize]{
+\renewcommand*{\cventry}[7][\cvsize]{
 	\cvitem[#1]{#2}{\textbf{#3}
     \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}
     \ifthenelse{\equal{#5}{}}{}{, #5}
     \ifthenelse{\equal{#6}{}}{}{, #6}
-    
-    \movep
+    \newline{}
     #7} %
 }
 
 \newcommand*{\workProj}[2]{
 \emph{#1}\par %
-\movep
+\leftskip 0.2in
+\parindent -0.2in
 #2\par
 
 }
@@ -126,25 +117,34 @@
 }
 
 \newcommand*{\selfproj}[6][\cvsize]{
-\cvitem[#1]{}{
-\emph{#2} % 
-\ifthenelse{\equal{#3}{}}
-{}
-{(#3)} % 
+#2
 
-\movep
-{#4} %
-\newline
-\ifthenelse{\equal{#5}{}}{}{Demo: \url{#5} \newline} %
-\ifthenelse{\equal{#6}{}}{(Source Code is private)}{Latest Version: \url{#6}} %
-} %
+#3
+
+#4
+
+#5
+
+#6
+% \cvitem[#1]{}{
+% \emph{#2} % 
+% \ifthenelse{\equal{#3}{}}
+% {}
+% {(#3)} % 
+
+% \leftskip 0.2in
+% \parindent -0.2in
+% {#4} %
+% \newline
+% \ifthenelse{\equal{#5}{}}{}{Demo: \url{#5} \newline} %
+% \ifthenelse{\equal{#6}{}}{(Source Code is private)}{Latest Version: \url{#6}} %
+% } %
 }
 
 \newcommand{\projadd}[3][\cvsize]{
 \cvitem[#1]{}{
-
-\movep
 #2
+\newline %
 \url{#3}
 }%
 }
