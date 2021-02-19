@@ -23,7 +23,7 @@
 % paper size option
 \DeclareOption{a4paper}{
   \setlength\paperheight{297mm}
-  \setlength\paperwidth{210mm}}
+	\setlength\paperwidth{210mm}}
 \DeclareOption{a5paper}{
   \setlength\paperheight{210mm}
   \setlength\paperwidth{148mm}}

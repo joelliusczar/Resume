@@ -19,8 +19,8 @@ while [ "$#" -gt 0 ]; do
   shift
 done
 
-fname="${fnargs:-Dude}"
-lname="${lnargs:-Lebowsky}"
+fname="${fnarg:-Dude}"
+lname="${lnarg:-Lebowsky}"
 myemail="${emarg:-test@test.com}"
 mophone="${pharg:-(555)555-5555}"
 

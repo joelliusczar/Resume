@@ -102,10 +102,10 @@
 }
 
 \renewcommand{\cventry}[7][\cvsize]{
-	\cvitem[#1]{#2}{\textbf{#3}
-    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}
-    \ifthenelse{\equal{#5}{}}{}{, #5}
-    \ifthenelse{\equal{#6}{}}{}{, #6}
+	\cvitem[#1]{#2}{\textbf{#3}%
+    \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, #5}%
+    \ifthenelse{\equal{#6}{}}{}{, #6}%
     
     \movep
     #7} %
@@ -136,7 +136,7 @@
 {#4} %
 \newline
 \ifthenelse{\equal{#5}{}}{}{Demo: \url{#5} \newline} %
-\ifthenelse{\equal{#6}{}}{(Source Code is private)}{Latest Version: \url{#6}} %
+\ifthenelse{\equal{#6}{}}{(Source Code is private)}{Latest\enspace{}Version:\quad{}\url{#6}} %
 } %
 }
 
